@@ -25,7 +25,7 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(1440, 960);
+  createCanvas(1500, 800);
   carX = width / 2;
   carY = height / 2;
 }

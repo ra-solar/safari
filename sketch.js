@@ -7,7 +7,7 @@ let angle = 0;
 let showingAnimal = false;
 let animalStartTime;
 let currentAnimalImage;
-let bgMusic; // Variable to hold the background music
+let bgMusic; // Variable for background music
 let gameStarted = false; // Flag to track if the game has started
 
 function preload() {

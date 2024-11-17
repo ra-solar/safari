@@ -26,7 +26,7 @@ function preload() {
   }
 
   // Load the background music
-  bgMusic = loadSound('music/forest.mp3'); // Ensure the file path and extension are correct
+  bgMusic = loadSound('music/forest.mp4'); // Ensure the file path and extension are correct
 }
 
 function setup() {

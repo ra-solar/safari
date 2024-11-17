@@ -7,6 +7,8 @@ let angle = 0;
 let showingAnimal = false;
 let animalStartTime;
 let currentAnimalImage;
+let bgMusic; // Variable to hold the background music
+let gameStarted = false; // Flag to track if the game has started
 
 function preload() {
   // Load and resize the car image
@@ -22,6 +24,9 @@ function preload() {
     let img = loadImage(`images/animals/animal-${number}.png`);
     animalImages.push(img);
   }
+
+  // Load the background music
+  bgMusic = loadSound('music/forest.mp3'); // Ensure the file path and extension are correct
 }
 
 function setup() {
@@ -31,7 +36,14 @@ function setup() {
 }
 
 function draw() {
-  if (showingAnimal) {
+  if (!gameStarted) {
+    // Display the start screen
+    background(0); // Black background
+    fill(255); // White text
+    textAlign(CENTER, CENTER);
+    textSize(32);
+    text('Click to Start the Game', width / 2, height / 2);
+  } else if (showingAnimal) {
     // Display the animal image fullscreen
     image(currentAnimalImage, 0, 0, width, height);
 
@@ -72,6 +84,17 @@ function draw() {
     imageMode(CENTER);
     image(carImage, 0, 0);
     pop();
+  }
+}
+
+function mousePressed() {
+  if (!gameStarted) {
+    gameStarted = true;
+
+    // Start the background music
+    if (!bgMusic.isPlaying()) {
+      bgMusic.loop();
+    }
   }
 }
 
